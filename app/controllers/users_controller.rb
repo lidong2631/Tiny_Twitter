@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-  		flash[:success] = "Welcome to the Micropost App!"
+  		log_in @user
+      flash[:success] = "Welcome to the Micropost App!"
   		redirect_to user_url(@user)
   	else
   		render 'new'
