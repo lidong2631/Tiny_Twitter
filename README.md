@@ -1,1 +1,1 @@
-This is the sample micropost application from Ruby on Rails Tutorial by Michael Hartl
+This is the micropost application from Ruby on Rails Tutorial by Michael Hartl
