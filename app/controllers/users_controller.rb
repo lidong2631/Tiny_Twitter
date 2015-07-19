@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @tweets = @user.tweets.paginate(page: params[:page])
   	# debugger
   end
 
@@ -58,13 +59,13 @@ class UsersController < ApplicationController
     # Before filters
 
     # Confirm a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
+    # def logged_in_user
+    #   unless logged_in?
+    #     store_location
+    #     flash[:danger] = "Please log in."
+    #     redirect_to login_url
+    #   end
+    # end
 
     # Confirms the correct user
     def correct_user
